@@ -19,7 +19,7 @@ const marketReducer = (state = INITIAL_MARKET_STATE, action) => {
     case REQUEST_PRODUCTS_SUCCESS:
       return {
         ...state,
-        products: action.data,
+        products: action.data.results,
       };
 
     case REQUEST_PRODUCTS_ERROR:

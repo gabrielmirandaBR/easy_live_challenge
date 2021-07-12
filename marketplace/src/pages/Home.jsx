@@ -1,15 +1,25 @@
 import { useEffect } from "react";
+import { connect} from "react-redux";
+import propTypes from 'prop-types';
+import { fetchProducts } from "../redux/actions";
 
-function Home() {
+function Home({fetchItems}) {
 
   useEffect(()=> {
-    
+    fetchItems()
   }, [])
-
 
   return (
     <h1>Loja</h1>
   )
 }
 
-export default Home;
+const mapDispatchToProps = (dispatch) => ({
+  fetchItems: () => dispatch(fetchProducts())
+})
+
+Home.propTypes = {
+  fetchItems: propTypes.func.isRequired,
+}
+
+export default connect(null, mapDispatchToProps)(Home);
