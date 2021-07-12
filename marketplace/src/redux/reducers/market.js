@@ -1,17 +1,36 @@
+import { REQUEST_PRODUCTS, REQUEST_PRODUCTS_ERROR, REQUEST_PRODUCTS_SUCCESS } from "../actions";
+
 const INITIAL_MARKET_STATE = {
   payload: {
     products: []
   },
   error: null,
-  isFething: false,
+  isFetching: false,
 }
 
-const market = (state = INITIAL_MARKET_STATE, action) => {
+const marketReducer = (state = INITIAL_MARKET_STATE, action) => {
   switch (action.type) {
+    case REQUEST_PRODUCTS:
+      return {
+        ...state,
+        isFetching: true,
+      };
+
+    case REQUEST_PRODUCTS_SUCCESS:
+      return {
+        ...state,
+        products: action.data,
+      };
+
+    case REQUEST_PRODUCTS_ERROR:
+      return {
+        ...state,
+        error: action.error,
+      };
 
     default:
       return state;
   }
 }
 
-export default market;
+export default marketReducer;
