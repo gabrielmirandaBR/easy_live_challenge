@@ -12,10 +12,9 @@ function Home({fetchItems}) {
 
   return (
     <>
-    <header>
-      <SearchBar />
-    </header>
-    <h1>Loja</h1>
+      <header>
+        <SearchBar />
+      </header>
     </>
   )
 }

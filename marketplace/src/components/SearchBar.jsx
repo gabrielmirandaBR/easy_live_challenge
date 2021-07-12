@@ -1,11 +1,20 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import propTypes from 'prop-types';
+import { connect } from "react-redux";
 import search from '../assets/images/search.svg';
+import { fetchFilteredProducts } from "../redux/actions";
 
-function SearchBar() {
+function SearchBar({fetchFilteredItems}) {
   const [inputValue, setInputValue] = useState('')
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    fetchFilteredItems(inputValue)
+  }
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Form.Group>
           <Form.Control 
             type="text" 
@@ -13,12 +22,20 @@ function SearchBar() {
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
           />
+      </Form.Group>
       <Button type="submit" variant="light">
         <img src={ search } alt="lupa" />
       </Button>
-      </Form.Group>
     </Form>
   );
 }
 
-export default SearchBar;
+const mapDispatchToProps = (dispatch) => ({
+  fetchFilteredItems: (product) => dispatch(fetchFilteredProducts(product))
+});
+
+SearchBar.propTypes = {
+  fetchFilteredItems: propTypes.func.isRequired,
+}
+
+export default connect (null, mapDispatchToProps )(SearchBar);
