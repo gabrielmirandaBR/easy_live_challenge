@@ -19,13 +19,17 @@ const marketReducer = (state = INITIAL_MARKET_STATE, action) => {
     case REQUEST_PRODUCTS_SUCCESS:
       return {
         ...state,
-        products: action.data.results,
+        payload: {
+          products: action.data.results,
+        },
+        isFetching: false,
       };
 
     case REQUEST_PRODUCTS_ERROR:
       return {
         ...state,
         error: action.error,
+        isFetching: false,
       };
 
     default:
