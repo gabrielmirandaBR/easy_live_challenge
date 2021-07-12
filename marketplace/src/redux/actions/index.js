@@ -1,4 +1,4 @@
-import getComputerProducts from "../../services/MLAPI";
+import {getComputerProducts}from "../../services/MLAPI";
 
 export const REQUEST_PRODUCTS = 'REQUEST_PRODUCTS';
 export const REQUEST_PRODUCTS_SUCCESS = 'REQUEST_PRODUCTS_SUCCESS';

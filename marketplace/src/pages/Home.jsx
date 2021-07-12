@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { connect} from "react-redux";
+import { connect } from "react-redux";
 import propTypes from 'prop-types';
 import { fetchProducts } from "../redux/actions";
+import SearchBar from "../components/SearchBar";
 
 function Home({fetchItems}) {
 
@@ -10,7 +11,12 @@ function Home({fetchItems}) {
   }, [])
 
   return (
+    <>
+    <header>
+      <SearchBar />
+    </header>
     <h1>Loja</h1>
+    </>
   )
 }
 

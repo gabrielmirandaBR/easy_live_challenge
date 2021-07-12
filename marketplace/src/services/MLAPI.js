@@ -1,9 +1,15 @@
-const COMPUTER_PRODUCTS = 'https://api.mercadolibre.com/sites/MLB/search?q=computer%20G6'
+const PRODUCTS_LIST = 'https://api.mercadolibre.com/sites/MLB/search?q='
 
-async function getComputerProducts() {
-  const request = await fetch(COMPUTER_PRODUCTS);
+export async function getComputerProducts() {
+  const request = await fetch(`${PRODUCTS_LIST}computer`);
   const response = request.json();
   return response;
 }
 
-export default getComputerProducts;
+
+
+export async function getFilteredProducts(product) {
+  const request = await fetch(`${PRODUCTS_LIST}${product}`)
+  const response = request.json();
+  return response;
+}

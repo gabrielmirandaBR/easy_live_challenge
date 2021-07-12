@@ -8,7 +8,7 @@ const INITIAL_MARKET_STATE = {
   isFetching: false,
 }
 
-const marketReducer = (state = INITIAL_MARKET_STATE, action) => {
+function marketReducer(state = INITIAL_MARKET_STATE, action) {
   switch (action.type) {
     case REQUEST_PRODUCTS:
       return {
