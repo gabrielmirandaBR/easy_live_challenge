@@ -31,13 +31,19 @@ function ProductDetails({ itemDetails, setInShoppingCart  }) {
 					<Card.Title className="details__price">
 						R$ {itemDetails.price.toFixed(2)}
 					</Card.Title>
-					<Card.Text>
+					<Card.Text className="details__text">
+						<img src="https://img.icons8.com/color/48/000000/star--v1.png" alt="star" width="35px"/>
+						{' '}
 						{itemDetails.sold_quantity} unidades vendidas
 					</Card.Text>
-					<Card.Text>
+					<Card.Text className="details__text">
+						<img src="https://img.icons8.com/office/16/000000/worldwide-location.png" alt="location" width="30px"/>
+						{' '}
 						Localização: {itemDetails.address.city_name}, {itemDetails.address.state_name}.
 					</Card.Text>
-					<Card.Text>
+					<Card.Text className="details__text">
+						<img src="https://img.icons8.com/emoji/48/000000/sports-medal-emoji.png" alt="medal" width="30px"/>
+						{' '}
 						Vendido por: <a href={itemDetails.seller.permalink} rel="noreferrer" target="_blank">Usuário Mercado Livre</a>
 					</Card.Text>
 					<Button
