@@ -17,7 +17,7 @@
 }
 
 .product__price {
-  color: rgba(165, 42, 42, 0.844);
+  color: rgb(204, 79, 79);
   font-size: 1.25rem;
   font-weight: 600;
 }
