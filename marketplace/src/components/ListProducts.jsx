@@ -24,7 +24,7 @@ function ListProducts({items, itemsFiltered}) {
 
 const mapStateToProps = (state) => ({
   items: state.market.payload.products,
-  itemsFiltered: state.market.payload.filteredProducts
+  itemsFiltered: state.market.payload.filteredProducts,
 });
 
 ListProducts.propTypes = {

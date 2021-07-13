@@ -4,6 +4,7 @@ export const REQUEST_PRODUCTS = 'REQUEST_PRODUCTS';
 export const REQUEST_PRODUCTS_SUCCESS = 'REQUEST_PRODUCTS_SUCCESS';
 export const REQUEST_PRODUCTS_ERROR = 'REQUEST_PRODUCTS_ERROR';
 export const REQUEST_FILTERED_PRODUCTS_SUCCESS = 'REQUEST_FILTERED_PRODUCTS_SUCCESS';
+export const GET_PRODUCTS_DETAILS = 'GET_PRODUCTS_DETAILS';
 
 export function requestProducts() {
   return {
@@ -31,6 +32,13 @@ export function requestProductsFilteredSuccess(data) {
     data,
   };
 };
+
+export function getProductDetails(item) {
+  return {
+    type: GET_PRODUCTS_DETAILS,
+    item,
+  }
+}
 
 export function fetchProducts() {
   return async (dispatch) => {

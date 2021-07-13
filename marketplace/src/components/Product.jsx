@@ -1,13 +1,25 @@
 import { Button, Card } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+
 import propTypes from 'prop-types';
 
 import '../styles/Product.css';
+import { connect } from "react-redux";
+import { getProductDetails } from "../redux/actions";
 
-function Product({ item }) {
+function Product({ item, getItemDetails }) {
+  const history = useHistory();
+
+  function handleClick() {
+    history.push(`/product/${item.id}`)
+    getItemDetails(item)
+  }
+
   return (
     <Button 
       variant="light" 
       style={{backgroundColor: 'transparent', border: 'none'}}
+      onClick={() => handleClick() }
     >
       <Card 
         className="product__card" 
@@ -33,14 +45,19 @@ function Product({ item }) {
   )
 }
 
+
+const mapDispatchToProps = (dispatch) => ({
+  getItemDetails: (item) => dispatch(getProductDetails(item))
+})
+
 Product.propTypes = {
   item: propTypes.shape({
+    id: propTypes.string.isRequired,
     thumbnail: propTypes.string.isRequired,
     title: propTypes.string.isRequired,
     price: propTypes.number.isRequired,
   }).isRequired,
+  getItemDetails: propTypes.func.isRequired,
 };
 
-
-
-export default Product;
+export default connect (null, mapDispatchToProps)(Product);

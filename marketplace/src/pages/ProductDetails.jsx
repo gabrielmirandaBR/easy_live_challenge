@@ -1,7 +1,22 @@
-function ProductDetails() {
+/* eslint-disable react/prop-types */
+/* eslint-disable react/require-default-props */
+import { connect } from "react-redux";
+import propTypes from 'prop-types';
+
+function ProductDetails({itemDetails}) {
   return (
-    <p>product</p>
+    <p>{itemDetails.id}</p>
   )
 }
 
-export default ProductDetails;
+const mapStateToProps = (state) => ({
+  itemDetails: state.market.payload.productDetails
+});
+
+ProductDetails.propTypes = {
+  itemDetails: propTypes.shape({
+    
+  })
+}
+
+export default connect(mapStateToProps)(ProductDetails);
