@@ -1,0 +1,21 @@
+.search {
+  align-items: baseline;
+  background-color: #f8f9fa;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
+  padding: .375rem .75rem;
+}
+
+.search__input {
+  border-color: #f8f9fa;
+  border-radius: 50px;
+  padding: 5px;
+  
+}
+
+.search__button img {
+  background-color: transparent;
+  width: 50px;
+}

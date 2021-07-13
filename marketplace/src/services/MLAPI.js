@@ -6,8 +6,6 @@ export async function getComputerProducts() {
   return response;
 }
 
-
-
 export async function getFilteredProducts(product) {
   const request = await fetch(`${PRODUCTS_LIST}${product}`)
   const response = request.json();

@@ -5,28 +5,37 @@ import { connect } from "react-redux";
 import search from '../assets/images/search.svg';
 import { fetchFilteredProducts } from "../redux/actions";
 
+import '../styles/SearchBar.css';
+
 function SearchBar({fetchFilteredItems}) {
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
-    fetchFilteredItems(inputValue)
-  }
+    fetchFilteredItems(inputValue);
+  };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group>
-          <Form.Control 
-            type="text" 
-            placeholder="Ache o seu produto" 
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
-          />
-      </Form.Group>
-      <Button type="submit" variant="light">
-        <img src={ search } alt="lupa" />
-      </Button>
-    </Form>
+    <section>
+      <Form onSubmit={handleSubmit} className="search">
+        <Form.Group>
+            <Form.Control
+              className="search__input"
+              type="text" 
+              placeholder="Ache o seu produto" 
+              value={inputValue}
+              onChange={(event) => setInputValue(event.target.value)}
+            />
+        </Form.Group>
+        <Button
+          className="search__button"
+          type="submit" 
+          variant="light"
+        >
+          <img src={ search } alt="lupa" />
+        </Button>
+      </Form>
+    </section>
   );
 }
 
@@ -38,4 +47,4 @@ SearchBar.propTypes = {
   fetchFilteredItems: propTypes.func.isRequired,
 }
 
-export default connect (null, mapDispatchToProps )(SearchBar);
+export default connect (null, mapDispatchToProps)(SearchBar);
