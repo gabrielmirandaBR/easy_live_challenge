@@ -41,7 +41,11 @@ const mapDispatchToProps = (dispatch) => ({
 Home.propTypes = {
 	fetchItems: propTypes.func.isRequired,
 	fetchcategories: propTypes.func.isRequired,
-	categories: propTypes.arrayOf(propTypes.object).isRequired,
+	categories: propTypes.arrayOf(propTypes.object)
 };
+
+Home.defaultProps = {
+	categories: [],
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
