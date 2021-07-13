@@ -24,13 +24,13 @@ function Product({ item, getItemDetails }) {
 			<Card
 				className="product__card"
 				style={{
-					borderRadius: '30px',
+					borderRadius: '15px',
 					backgroundColor: '#f8f9fa',
-					minWidth: '8rem',
 				}}
 			>
 				<Card.Img
 					className="product__image"
+					style={{width:"150px", height:'150px'}}
 					variant="top"
 					src={item.thumbnail}
 					alt={item.title}
