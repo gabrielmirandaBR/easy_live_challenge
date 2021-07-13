@@ -6,6 +6,7 @@ import SearchBar from '../components/SearchBar';
 import ListProducts from '../components/ListProducts';
 
 import '../styles/Home.css';
+import ListCategories from '../components/ListCategories';
 
 function Home({ fetchItems }) {
 	useEffect(() => {
@@ -16,9 +17,9 @@ function Home({ fetchItems }) {
 		<>
 			<header>
 				<SearchBar />
-        <div className='gift'>
-          <img className="gift__animation" src="https://media.giphy.com/media/JmVItNiJ8PGSnDVf0e/source.gif" alt="gift" />
-        </div>
+				<section className="categories">
+					<ListCategories />
+				</section>
 			</header>
 			<main>
 				<ListProducts />
