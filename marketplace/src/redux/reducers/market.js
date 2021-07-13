@@ -8,7 +8,7 @@ import {
 const INITIAL_MARKET_STATE = {
   payload: {
     products: [],
-    filteredProducts: []
+    filteredProducts: [],
   },
   error: null,
   isFetching: false,

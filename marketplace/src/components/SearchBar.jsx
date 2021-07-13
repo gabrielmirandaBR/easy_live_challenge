@@ -7,6 +7,7 @@ import { fetchFilteredProducts } from "../redux/actions";
 
 import '../styles/SearchBar.css';
 
+
 function SearchBar({fetchFilteredItems}) {
   const [inputValue, setInputValue] = useState('');
 
