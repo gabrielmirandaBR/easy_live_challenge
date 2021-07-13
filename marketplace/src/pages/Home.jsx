@@ -11,7 +11,7 @@ import ListCategories from '../components/ListCategories';
 function Home({ fetchItems, fetchcategories, categories }) {
 	useEffect(() => {
 		fetchItems();
-		fetchcategories()
+		fetchcategories();
 	}, []);
 
 	return (
@@ -19,7 +19,7 @@ function Home({ fetchItems, fetchcategories, categories }) {
 			<header>
 				<SearchBar />
 				<section className="categories">
-					<ListCategories categories={ categories }/>
+					<ListCategories categories={categories} />
 				</section>
 			</header>
 			<main>
@@ -41,11 +41,11 @@ const mapDispatchToProps = (dispatch) => ({
 Home.propTypes = {
 	fetchItems: propTypes.func.isRequired,
 	fetchcategories: propTypes.func.isRequired,
-	categories: propTypes.arrayOf(propTypes.object)
+	categories: propTypes.arrayOf(propTypes.object),
 };
 
 Home.defaultProps = {
 	categories: [],
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,4 +1,8 @@
-import { getCategoriesProducts, getComputerProducts, getFilteredProducts } from '../../services/MLAPI';
+import {
+	getCategoriesProducts,
+	getComputerProducts,
+	getFilteredProducts,
+} from '../../services/MLAPI';
 
 export const REQUEST_PRODUCTS = 'REQUEST_PRODUCTS';
 export const REQUEST_PRODUCTS_SUCCESS = 'REQUEST_PRODUCTS_SUCCESS';
@@ -48,21 +52,21 @@ export function requestCategories() {
 	return {
 		type: REQUEST_CATEGORIES,
 	};
-};
+}
 
 export function requestCategoriesSuccess(data) {
 	return {
 		type: REQUEST_CATEGORIES_SUCCESS,
 		data,
 	};
-};
+}
 
 export function requestCategoriesError(error) {
 	return {
 		type: REQUEST_CATEGORIES_ERROR,
 		error,
 	};
-};
+}
 
 export function fetchProducts() {
 	return async (dispatch) => {
@@ -84,18 +88,18 @@ export function fetchFilteredProducts(product) {
 			dispatch(requestProductsFilteredSuccess(data));
 		} catch (error) {
 			dispatch(requestProductsError(error));
-		};
+		}
 	};
-};
+}
 
 export function fetchCategoriesProducts() {
 	return async (dispatch) => {
 		try {
 			dispatch(requestCategories());
 			const data = await getCategoriesProducts();
-			dispatch(requestCategoriesSuccess(data))
+			dispatch(requestCategoriesSuccess(data));
 		} catch (error) {
-			dispatch(requestCategoriesError(error))
-		};
+			dispatch(requestCategoriesError(error));
+		}
 	};
-};
+}

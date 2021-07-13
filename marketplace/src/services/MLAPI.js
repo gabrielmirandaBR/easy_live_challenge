@@ -1,5 +1,5 @@
 const PRODUCTS_LIST = 'https://api.mercadolibre.com/sites/MLB/search?q=';
-const CATEGORIES_LIST ='https://api.mercadolibre.com/sites/MLB/categories'
+const CATEGORIES_LIST = 'https://api.mercadolibre.com/sites/MLB/categories';
 
 export async function getComputerProducts() {
 	const request = await fetch(`${PRODUCTS_LIST}computer`);
