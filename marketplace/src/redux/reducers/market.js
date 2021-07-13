@@ -4,6 +4,9 @@ import {
 	REQUEST_PRODUCTS_SUCCESS,
 	REQUEST_FILTERED_PRODUCTS_SUCCESS,
 	GET_PRODUCTS_DETAILS,
+	REQUEST_CATEGORIES_SUCCESS,
+	REQUEST_CATEGORIES,
+	REQUEST_CATEGORIES_ERROR,
 } from '../actions';
 
 const INITIAL_MARKET_STATE = {
@@ -58,6 +61,29 @@ function marketReducer(state = INITIAL_MARKET_STATE, action) {
 					...state.payload,
 					productDetails: action.item,
 				},
+			};
+
+		case REQUEST_CATEGORIES:
+			return {
+				...state,
+				isFetching: true,
+			};
+		
+		case REQUEST_CATEGORIES_SUCCESS: 
+		return {
+			...state,
+			payload: {
+				...state.payload,
+				productsCategories: action.data
+			},
+			isFetching: false,
+		};
+
+		case REQUEST_CATEGORIES_ERROR:
+			return {
+				...state,
+				error: action.error,
+				isFetching: false,
 			};
 
 		default:
