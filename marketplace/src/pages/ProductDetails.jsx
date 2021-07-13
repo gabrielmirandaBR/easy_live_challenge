@@ -1,13 +1,17 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/require-default-props */
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import { Button, Card } from 'react-bootstrap';
 
 import '../styles/ProductDetails.css';
+import { buyProduct } from '../redux/actions';
 
 
-function ProductDetails({ itemDetails }) {
+function ProductDetails({ itemDetails, setInShoppingCart  }) {
+
+	function handleClick() {
+		setInShoppingCart(itemDetails)
+	}
+
 	return (
 		<section className="details">
 			<Card
@@ -36,7 +40,10 @@ function ProductDetails({ itemDetails }) {
 					<Card.Text>
 						Vendido por: <a href={itemDetails.seller.permalink} rel="noreferrer" target="_blank">Usuário Mercado Livre</a>
 					</Card.Text>
-					<Button>
+					<Button
+						type="button"
+						onClick={() => handleClick()}
+					>
 						Compre Agora
 					</Button>
 				</Card.Body>
@@ -49,8 +56,25 @@ const mapStateToProps = (state) => ({
 	itemDetails: state.market.payload.productDetails,
 });
 
+const mapDispatchToProps = (dispatch) => ({
+	setInShoppingCart: (item) => dispatch(buyProduct(item))
+})
+
 ProductDetails.propTypes = {
-	itemDetails: propTypes.shape({}),
+	itemDetails: propTypes.shape({
+		thumbnail: propTypes.string.isRequired,
+		title: propTypes.string.isRequired,
+		price: propTypes.number.isRequired,
+		sold_quantity: propTypes.number.isRequired,
+		address: propTypes.shape({
+			city_name: propTypes.string.isRequired,
+			state_name: propTypes.string.isRequired,
+		}),
+		seller: propTypes.shape({
+			permalink: propTypes.string.isRequired,
+		})
+	}).isRequired,
+	setInShoppingCart: propTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(ProductDetails);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails);

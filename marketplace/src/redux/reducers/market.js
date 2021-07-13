@@ -7,6 +7,7 @@ import {
 	REQUEST_CATEGORIES_SUCCESS,
 	REQUEST_CATEGORIES,
 	REQUEST_CATEGORIES_ERROR,
+	BUY_PRODUCT,
 } from '../actions';
 
 const INITIAL_MARKET_STATE = {
@@ -14,6 +15,7 @@ const INITIAL_MARKET_STATE = {
 		products: [],
 		filteredProducts: [],
 		productDetails: {},
+		productsInShoppingCart: [],
 	},
 	error: null,
 	isFetching: false,
@@ -68,22 +70,31 @@ function marketReducer(state = INITIAL_MARKET_STATE, action) {
 				...state,
 				isFetching: true,
 			};
-
-		case REQUEST_CATEGORIES_SUCCESS:
-			return {
-				...state,
-				payload: {
-					...state.payload,
-					productsCategories: action.data,
-				},
-				isFetching: false,
-			};
+		
+		case REQUEST_CATEGORIES_SUCCESS: 
+		return {
+			...state,
+			payload: {
+				...state.payload,
+				productsCategories: action.data
+			},
+			isFetching: false,
+		};
 
 		case REQUEST_CATEGORIES_ERROR:
 			return {
 				...state,
 				error: action.error,
 				isFetching: false,
+			};
+
+		case BUY_PRODUCT: 
+			return {
+				...state,
+				payload: {
+					...state.payload,
+					productsInShoppingCart: [...state.payload.productsInShoppingCart, action.item]
+				},
 			};
 
 		default:

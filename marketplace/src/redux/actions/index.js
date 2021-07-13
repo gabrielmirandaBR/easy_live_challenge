@@ -13,6 +13,7 @@ export const GET_PRODUCTS_DETAILS = 'GET_PRODUCTS_DETAILS';
 export const REQUEST_CATEGORIES = 'REQUEST_CATEGORIES';
 export const REQUEST_CATEGORIES_SUCCESS = 'REQUEST_CATEGORIES_SUCCESS';
 export const REQUEST_CATEGORIES_ERROR = 'REQUEST_CATEGORIES_ERROR';
+export const BUY_PRODUCT = 'BUY_PRODUCT';
 
 export function requestProducts() {
 	return {
@@ -66,6 +67,13 @@ export function requestCategoriesError(error) {
 		type: REQUEST_CATEGORIES_ERROR,
 		error,
 	};
+}
+
+export function buyProduct(item) {
+	return {
+		type: BUY_PRODUCT,
+		item,
+	}
 }
 
 export function fetchProducts() {
