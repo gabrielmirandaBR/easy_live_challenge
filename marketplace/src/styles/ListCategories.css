@@ -4,8 +4,3 @@
   overflow-x: scroll;
   width: 100vw;
 }
-
-
-#categories__button:hover {
-  background-color: black;
-}
