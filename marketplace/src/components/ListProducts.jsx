@@ -2,10 +2,11 @@ import { connect } from "react-redux";
 import propTypes from 'prop-types';
 import Product from "./Product";
 
+import '../styles/ListProducts.css'
 
 function ListProducts({items, itemsFiltered}) {
   return (
-    <>
+    <section className="cards">
     {
       itemsFiltered.length === 0 ?
        (
@@ -16,7 +17,7 @@ function ListProducts({items, itemsFiltered}) {
         itemsFiltered.map((item) => <Product key={item.id} item={item} />)
       )
     }
-    </>
+    </section>
   );
 };
 
