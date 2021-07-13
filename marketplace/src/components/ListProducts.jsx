@@ -1,5 +1,3 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable no-unused-vars */
 import { connect } from "react-redux";
 import propTypes from 'prop-types';
 import Product from "./Product";
