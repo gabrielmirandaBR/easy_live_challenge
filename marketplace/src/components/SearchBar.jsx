@@ -20,7 +20,7 @@ function SearchBar({ fetchFilteredItems }) {
 			<Form onSubmit={handleSubmit} className="search">
 				<Form.Group>
 					<Form.Control
-						className="search__input"
+						id="search__input"
 						type="text"
 						placeholder="Ache o seu produto"
 						value={inputValue}
@@ -28,7 +28,7 @@ function SearchBar({ fetchFilteredItems }) {
 					/>
 				</Form.Group>
 				<Button className="search__button" type="submit" variant="light">
-					<img src={search} alt="lupa" />
+					<img src={search} alt="magnifying glass" />
 				</Button>
 			</Form>
 		</section>

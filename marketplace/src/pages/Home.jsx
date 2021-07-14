@@ -7,6 +7,7 @@ import ListProducts from '../components/ListProducts';
 
 import '../styles/Home.css';
 import ListCategories from '../components/ListCategories';
+import Header from '../components/Header';
 
 function Home({ fetchItems, fetchcategories, categories }) {
 	useEffect(() => {
@@ -17,11 +18,17 @@ function Home({ fetchItems, fetchcategories, categories }) {
 	return (
 		<>
 			<header>
-				<SearchBar />
-				<section className="categories">
-					<ListCategories categories={categories} />
-				</section>
+				<Header dropDownMenu />
 			</header>
+
+			<section>
+				<SearchBar />
+			</section>
+
+			<section className="categories">
+				<ListCategories categories={categories} />
+			</section>
+
 			<main>
 				<ListProducts />
 			</main>
