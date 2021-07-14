@@ -1,7 +1,5 @@
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
-
-import '../styles/ProductDetails.css';
 import { useState } from 'react';
 import { buyProduct } from '../redux/actions';
 import ToastBox from '../components/ToastBox';
