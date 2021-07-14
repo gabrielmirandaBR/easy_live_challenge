@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
-import { Button, Card, Toast } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 
 import '../styles/ProductDetails.css';
 import { useState } from 'react';
 import { buyProduct } from '../redux/actions';
+import ToastBox from '../components/ToastBox';
 
 function ProductDetails({ itemDetails, setInShoppingCart }) {
 	const [show, setShow] = useState(false);
@@ -30,7 +31,7 @@ function ProductDetails({ itemDetails, setInShoppingCart }) {
 				<Card.Body>
 					<Card.Title>{itemDetails.title}</Card.Title>
 					<Card.Title className="details__price">
-						R$ {itemDetails.price.toFixed(2)}
+						R$ {itemDetails.price}
 					</Card.Title>
 					<Card.Text className="details__text">
 						<img
@@ -70,18 +71,7 @@ function ProductDetails({ itemDetails, setInShoppingCart }) {
 				</Card.Body>
 			</Card>
 
-			<Toast
-				onClose={() => setShow(false)}
-				show={show}
-				delay={3000}
-				autohide
-				className="toast"
-			>
-				<Toast.Header>
-					<img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-				</Toast.Header>
-				<Toast.Body>Produto adicionado ao carrinho!</Toast.Body>
-			</Toast>
+			<ToastBox show={show} setShow={setShow} />
 		</section>
 	);
 }
