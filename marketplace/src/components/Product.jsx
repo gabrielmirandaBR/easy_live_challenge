@@ -30,7 +30,7 @@ function Product({ item, getItemDetails }) {
 			>
 				<Card.Img
 					className="product__image"
-					style={{width:"150px", height:'150px'}}
+					style={{ width: '150px', height: '150px' }}
 					variant="top"
 					src={item.thumbnail}
 					alt={item.title}

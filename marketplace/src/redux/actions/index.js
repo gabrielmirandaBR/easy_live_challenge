@@ -73,7 +73,7 @@ export function buyProduct(item) {
 	return {
 		type: BUY_PRODUCT,
 		item,
-	}
+	};
 }
 
 export function fetchProducts() {

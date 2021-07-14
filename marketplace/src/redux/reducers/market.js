@@ -70,16 +70,16 @@ function marketReducer(state = INITIAL_MARKET_STATE, action) {
 				...state,
 				isFetching: true,
 			};
-		
-		case REQUEST_CATEGORIES_SUCCESS: 
-		return {
-			...state,
-			payload: {
-				...state.payload,
-				productsCategories: action.data
-			},
-			isFetching: false,
-		};
+
+		case REQUEST_CATEGORIES_SUCCESS:
+			return {
+				...state,
+				payload: {
+					...state.payload,
+					productsCategories: action.data,
+				},
+				isFetching: false,
+			};
 
 		case REQUEST_CATEGORIES_ERROR:
 			return {
@@ -88,12 +88,15 @@ function marketReducer(state = INITIAL_MARKET_STATE, action) {
 				isFetching: false,
 			};
 
-		case BUY_PRODUCT: 
+		case BUY_PRODUCT:
 			return {
 				...state,
 				payload: {
 					...state.payload,
-					productsInShoppingCart: [...state.payload.productsInShoppingCart, action.item]
+					productsInShoppingCart: [
+						...state.payload.productsInShoppingCart,
+						action.item,
+					],
 				},
 			};
 
