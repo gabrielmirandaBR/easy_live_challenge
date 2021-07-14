@@ -8,6 +8,7 @@ import {
 	REQUEST_CATEGORIES,
 	REQUEST_CATEGORIES_ERROR,
 	BUY_PRODUCT,
+	REMOVE_PRODUCT,
 } from '../actions';
 
 const INITIAL_MARKET_STATE = {
@@ -97,6 +98,17 @@ function marketReducer(state = INITIAL_MARKET_STATE, action) {
 						...state.payload.productsInShoppingCart,
 						action.item,
 					],
+				},
+			};
+
+		case REMOVE_PRODUCT:
+			return {
+				...state,
+				payload: {
+					...state.payload,
+					productsInShoppingCart: state.payload.productsInShoppingCart.filter(
+						(product) => product.id !== action.id
+					),
 				},
 			};
 

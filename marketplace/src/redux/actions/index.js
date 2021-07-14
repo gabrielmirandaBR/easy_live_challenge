@@ -14,6 +14,7 @@ export const REQUEST_CATEGORIES = 'REQUEST_CATEGORIES';
 export const REQUEST_CATEGORIES_SUCCESS = 'REQUEST_CATEGORIES_SUCCESS';
 export const REQUEST_CATEGORIES_ERROR = 'REQUEST_CATEGORIES_ERROR';
 export const BUY_PRODUCT = 'BUY_PRODUCT';
+export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 
 export function requestProducts() {
 	return {
@@ -73,6 +74,13 @@ export function buyProduct(item) {
 	return {
 		type: BUY_PRODUCT,
 		item,
+	};
+}
+
+export function deleteProduct(id) {
+	return {
+		type: REMOVE_PRODUCT,
+		id,
 	};
 }
 

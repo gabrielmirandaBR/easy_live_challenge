@@ -5,8 +5,9 @@ import { Button, Card, ListGroup } from 'react-bootstrap';
 import Header from '../components/Header';
 
 import '../styles/ShoppingCart.css';
+import { deleteProduct } from '../redux/actions';
 
-function ShoppingCart({ itemsInShoppingCart }) {
+function ShoppingCart({ itemsInShoppingCart, removeProduct }) {
 	function sumTotalValue() {
 		const totalValue = itemsInShoppingCart.reduce(
 			(acc, currentValue) => Number(acc) + Number(currentValue.price),
@@ -14,6 +15,10 @@ function ShoppingCart({ itemsInShoppingCart }) {
 		);
 
 		return Number(totalValue).toFixed(2);
+	}
+
+	function handleClick(id) {
+		removeProduct(id);
 	}
 
 	useEffect(() => {
@@ -31,7 +36,7 @@ function ShoppingCart({ itemsInShoppingCart }) {
 					<p className="card__total">Total: {sumTotalValue()}</p>
 				</Card.Header>
 				<ListGroup variant="flush">
-					{itemsInShoppingCart.map((item) => {
+					{itemsInShoppingCart.map((item, index) => {
 						console.log('oi');
 						return (
 							<ListGroup.Item key={item.id}>
@@ -42,19 +47,23 @@ function ShoppingCart({ itemsInShoppingCart }) {
 									height="70px"
 								/>
 								<p className="card__title">{item.title}</p>
-                <div className="card__buttons">
-								  <p>Quantidade: 1</p>
-                  <Button
-                    type="button"
-                    style={{ backgroundColor: 'transparent', border: 'none' }}
-                  >
-                    <img 
-                      src="https://img.icons8.com/fluent/48/000000/delete-sign.png"
-                      alt="trash" 
-                      width="25px"
-                    />
-                  </Button>
-                </div>
+								<div className="card__buttons">
+									<p>Quantidade: 1</p>
+									<Button
+										type="button"
+										style={{
+											backgrouremoveProductndColor: 'transparent',
+											border: 'none',
+										}}
+										onClick={() => handleClick(itemsInShoppingCart[index].id)}
+									>
+										<img
+											src="https://img.icons8.com/fluent/48/000000/delete-sign.png"
+											alt="trash"
+											width="25px"
+										/>
+									</Button>
+								</div>
 								<p className="card__price">R$ {item.price.toFixed(2)}</p>
 							</ListGroup.Item>
 						);
@@ -69,12 +78,17 @@ const mapStateToProps = (state) => ({
 	itemsInShoppingCart: state.market.payload.productsInShoppingCart,
 });
 
+const mapDispatchToProps = (dispatch) => ({
+	removeProduct: (id) => dispatch(deleteProduct(id)),
+});
+
 ShoppingCart.propTypes = {
 	itemsInShoppingCart: propTypes.arrayOf(propTypes.object),
+	removeProduct: propTypes.func.isRequired,
 };
 
 ShoppingCart.defaultProps = {
 	itemsInShoppingCart: [],
 };
 
-export default connect(mapStateToProps)(ShoppingCart);
+export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);
