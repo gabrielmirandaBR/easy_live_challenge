@@ -1,35 +1,51 @@
-import { useEffect } from "react";
-import { connect } from "react-redux";
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
 import propTypes from 'prop-types';
-import { fetchProducts } from "../redux/actions";
-import SearchBar from "../components/SearchBar";
-import ListProducts from "../components/ListProducts";
+import { fetchCategoriesProducts, fetchProducts } from '../redux/actions';
+import SearchBar from '../components/SearchBar';
+import ListProducts from '../components/ListProducts';
 
-function Home({fetchItems}) {
+import '../styles/Home.css';
+import ListCategories from '../components/ListCategories';
 
-  useEffect(()=> {
-    fetchItems();
-  })
+function Home({ fetchItems, fetchcategories, categories }) {
+	useEffect(() => {
+		fetchItems();
+		fetchcategories();
+	}, []);
 
-  return (
-    <>
-      <header>
-        <SearchBar />
-      </header>
-      <main>
-        <ListProducts />
-      </main>
-
-    </>
-  )
+	return (
+		<>
+			<header>
+				<SearchBar />
+				<section className="categories">
+					<ListCategories categories={categories} />
+				</section>
+			</header>
+			<main>
+				<ListProducts />
+			</main>
+		</>
+	);
 }
+
+const mapStateToProps = (state) => ({
+	categories: state.market.payload.productsCategories,
+});
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchItems: () => dispatch(fetchProducts())
-})
+	fetchItems: () => dispatch(fetchProducts()),
+	fetchcategories: () => dispatch(fetchCategoriesProducts()),
+});
 
 Home.propTypes = {
-  fetchItems: propTypes.func.isRequired,
-}
+	fetchItems: propTypes.func.isRequired,
+	fetchcategories: propTypes.func.isRequired,
+	categories: propTypes.arrayOf(propTypes.object),
+};
 
-export default connect(null, mapDispatchToProps)(Home);
+Home.defaultProps = {
+	categories: [],
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,0 +1,32 @@
+.details {
+  align-items: center;
+  display: flex;  
+  justify-content: center;
+  margin: 15px;
+  text-align: center;
+  padding: 15px;
+}
+
+.details__image {
+  background-size: contain;
+  height: 30vh;
+  max-width: 230px;
+  margin: 10px auto;
+}
+
+.details_title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.details__price {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: rgb(204, 79, 79);
+}
+
+.details__text {
+  display:'flex';
+  align-items: 'center';
+  justify-content: 'center'
+}

@@ -1,0 +1,27 @@
+.product__card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 18rem;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-right: 2px;
+  padding: 10px;
+  text-align: center;
+  width: 20rem;
+}
+
+.product__image {
+  padding: 5px;
+}
+
+.product__title {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.product__price {
+  color: rgb(204, 79, 79);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
