@@ -107,7 +107,7 @@ function marketReducer(state = INITIAL_MARKET_STATE, action) {
 				payload: {
 					...state.payload,
 					productsInShoppingCart: state.payload.productsInShoppingCart.filter(
-						(product) => product.id !== action.id
+						(_product, index) => index !== action.id
 					),
 				},
 			};

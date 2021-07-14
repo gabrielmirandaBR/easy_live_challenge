@@ -17,8 +17,8 @@ function ShoppingCart({ itemsInShoppingCart, removeProduct }) {
 		return Number(totalValue).toFixed(2);
 	}
 
-	function handleClick(id) {
-		removeProduct(id);
+	function handleClick(index) {
+		removeProduct(index);
 	}
 
 	useEffect(() => {
@@ -51,11 +51,8 @@ function ShoppingCart({ itemsInShoppingCart, removeProduct }) {
 									<p>Quantidade: 1</p>
 									<Button
 										type="button"
-										style={{
-											backgrouremoveProductndColor: 'transparent',
-											border: 'none',
-										}}
-										onClick={() => handleClick(itemsInShoppingCart[index].id)}
+										style={{ backgroundColor: 'transparent', border: 'none' }}
+										onClick={() => handleClick(index)}
 									>
 										<img
 											src="https://img.icons8.com/fluent/48/000000/delete-sign.png"
@@ -79,7 +76,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	removeProduct: (id) => dispatch(deleteProduct(id)),
+	removeProduct: (index) => dispatch(deleteProduct(index)),
 });
 
 ShoppingCart.propTypes = {
