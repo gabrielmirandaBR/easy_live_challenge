@@ -15,13 +15,11 @@ function Header({ dropDownMenu }) {
 				<>
 					<Navbar.Toggle aria-controls="navbar-dark-example" />
 					<Navbar.Collapse id="navbar-dark-example">
-					
-							<NavDropdown.Divider />
-								<Link to="/shopping_cart" className="header__link">
-									Carrinho
-								</Link>
-							<NavDropdown.Divider />
-						
+						<NavDropdown.Divider />
+						<Link to="/shopping_cart" className="header__link">
+							Carrinho
+						</Link>
+						<NavDropdown.Divider />
 					</Navbar.Collapse>
 				</>
 			)}

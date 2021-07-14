@@ -23,48 +23,52 @@ function ItemDetails({ itemDetails, handleClick }) {
 					<Card.Title className="details__price">
 						R$ {itemDetails.price}
 					</Card.Title>
-          <div className="details__seller">
-            <Card.Text className="details__text">
-              <img
-                src="https://img.icons8.com/color/48/000000/star--v1.png"
-                alt="star"
-                width="35px"
-              />
-              {itemDetails.sold_quantity} unidades vendidas
-            </Card.Text>
-            <Card.Text className="details__text">
-              <img
-                src="https://img.icons8.com/office/16/000000/worldwide-location.png"
-                alt="location"
-                width="30px"
-              />
-              Localização: {itemDetails.address.city_name},{' '}
-              {itemDetails.address.state_name}.
-            </Card.Text>
-            <Card.Text className="details__text">
-              <img
-                src="https://img.icons8.com/emoji/48/000000/sports-medal-emoji.png"
-                alt="medal"
-                width="30px"
-              />
-              Vendido por: {' '}
-              <a
-                href={itemDetails.seller.permalink}
-                rel="noreferrer"
-                target="_blank"
-              >
-                Usuário Mercado Livre
-              </a>
-            </Card.Text>
-          </div>
-          <div className="details__buttons">
-            <Link to="/shopping_cart">
-              <img src="https://img.icons8.com/ios/50/000000/shopping-cart.png" alt="shopping cart" width="50px"/>
-            </Link>
-            <Button type="button" onClick={() => handleClick()}>
-              Compre Agora
-            </Button>
-          </div>
+					<div className="details__seller">
+						<Card.Text className="details__text">
+							<img
+								src="https://img.icons8.com/color/48/000000/star--v1.png"
+								alt="star"
+								width="35px"
+							/>
+							{itemDetails.sold_quantity} unidades vendidas
+						</Card.Text>
+						<Card.Text className="details__text">
+							<img
+								src="https://img.icons8.com/office/16/000000/worldwide-location.png"
+								alt="location"
+								width="30px"
+							/>
+							Localização: {itemDetails.address.city_name},{' '}
+							{itemDetails.address.state_name}.
+						</Card.Text>
+						<Card.Text className="details__text">
+							<img
+								src="https://img.icons8.com/emoji/48/000000/sports-medal-emoji.png"
+								alt="medal"
+								width="30px"
+							/>
+							Vendido por:{' '}
+							<a
+								href={itemDetails.seller.permalink}
+								rel="noreferrer"
+								target="_blank"
+							>
+								Usuário Mercado Livre
+							</a>
+						</Card.Text>
+					</div>
+					<div className="details__buttons">
+						<Link to="/shopping_cart">
+							<img
+								src="https://img.icons8.com/ios/50/000000/shopping-cart.png"
+								alt="shopping cart"
+								width="50px"
+							/>
+						</Link>
+						<Button type="button" onClick={() => handleClick()}>
+							Compre Agora
+						</Button>
+					</div>
 				</Card.Body>
 			</Card>
 		</section>

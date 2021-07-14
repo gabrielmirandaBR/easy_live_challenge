@@ -8,7 +8,7 @@
   text-align: center;
 }
 
-.card__quantity {
+.card__quantity , .card__total {
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -16,6 +16,14 @@
 .card__title {
   font-size: .8rem;
   margin: 15px 0;
+}
+
+.card__buttons {
+  align-items: baseline;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 5px;
 }
 
 .card__price {
