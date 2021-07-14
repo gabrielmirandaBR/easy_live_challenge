@@ -7,23 +7,25 @@ import '../styles/Header.css';
 
 function Header({ dropDownMenu }) {
 	return (
-		<Navbar variant="light" bg="light" expand="lg" id="header">
-			<Link to="/">
-				<img className="header__logo" src={logo} alt="logo" />
-			</Link>
-			{dropDownMenu && (
-				<>
-					<Navbar.Toggle aria-controls="navbar-dark-example" />
-					<Navbar.Collapse id="navbar-dark-example">
-						<NavDropdown.Divider />
-						<Link to="/shopping_cart" className="header__link">
-							Carrinho
-						</Link>
-						<NavDropdown.Divider />
-					</Navbar.Collapse>
-				</>
-			)}
-		</Navbar>
+		<section>
+			<Navbar variant="light" bg="light" expand="lg">
+				<Link to="/">
+					<img className="header__logo" src={logo} alt="logo" />
+				</Link>
+				{dropDownMenu && (
+					<>
+						<Navbar.Toggle aria-controls="navbar-dark-example" />
+						<Navbar.Collapse id="navbar-dark-example">
+							<NavDropdown.Divider />
+							<Link to="/shopping_cart" className="header__link">
+								Carrinho
+							</Link>
+							<NavDropdown.Divider />
+						</Navbar.Collapse>
+					</>
+				)}
+			</Navbar>
+		</section>
 	);
 }
 
