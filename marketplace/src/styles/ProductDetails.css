@@ -10,8 +10,8 @@
 .details__image {
   background-size: contain;
   height: 30vh;
-  max-width: 230px;
   margin: 10px auto;
+  max-width: 230px;
 }
 
 .details_title {
@@ -20,13 +20,19 @@
 }
 
 .details__price {
-  font-weight: 600;
-  font-size: 1.5rem;
   color: rgb(204, 79, 79);
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .details__text {
-  display:'flex';
   align-items: 'center';
+  display:'flex';
   justify-content: 'center'
+}
+
+.toast {
+  position: absolute;
+  top: 60%;
+  width: 70%;
 }

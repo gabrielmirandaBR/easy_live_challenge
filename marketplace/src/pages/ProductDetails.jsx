@@ -1,13 +1,17 @@
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Toast } from 'react-bootstrap';
 
 import '../styles/ProductDetails.css';
+import { useState } from 'react';
 import { buyProduct } from '../redux/actions';
 
 function ProductDetails({ itemDetails, setInShoppingCart }) {
+	const [show, setShow] = useState(false);
+
 	function handleClick() {
 		setInShoppingCart(itemDetails);
+		setShow(true);
 	}
 
 	return (
@@ -65,6 +69,19 @@ function ProductDetails({ itemDetails, setInShoppingCart }) {
 					</Button>
 				</Card.Body>
 			</Card>
+
+			<Toast
+				onClose={() => setShow(false)}
+				show={show}
+				delay={3000}
+				autohide
+				className="toast"
+			>
+				<Toast.Header>
+					<img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+				</Toast.Header>
+				<Toast.Body>Produto adicionado ao carrinho!</Toast.Body>
+			</Toast>
 		</section>
 	);
 }
@@ -79,19 +96,35 @@ const mapDispatchToProps = (dispatch) => ({
 
 ProductDetails.propTypes = {
 	itemDetails: propTypes.shape({
-		thumbnail: propTypes.string.isRequired,
-		title: propTypes.string.isRequired,
-		price: propTypes.number.isRequired,
-		sold_quantity: propTypes.number.isRequired,
+		thumbnail: propTypes.string,
+		title: propTypes.string,
+		price: propTypes.number,
+		sold_quantity: propTypes.number,
 		address: propTypes.shape({
-			city_name: propTypes.string.isRequired,
-			state_name: propTypes.string.isRequired,
+			city_name: propTypes.string,
+			state_name: propTypes.string,
 		}),
 		seller: propTypes.shape({
-			permalink: propTypes.string.isRequired,
+			permalink: propTypes.string,
 		}),
-	}).isRequired,
+	}),
 	setInShoppingCart: propTypes.func.isRequired,
+};
+
+ProductDetails.defaultProps = {
+	itemDetails: {
+		thumbnail: '',
+		title: '',
+		price: 0,
+		sold_quantity: 0,
+		address: {
+			city_name: '',
+			state_name: '',
+		},
+		seller: {
+			permalink: '',
+		},
+	},
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails);
