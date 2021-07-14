@@ -1,3 +1,5 @@
+/* eslint-disable no-return-assign */
+/* eslint-disable no-param-reassign */
 import {
 	REQUEST_PRODUCTS,
 	REQUEST_PRODUCTS_ERROR,
@@ -20,6 +22,7 @@ const INITIAL_MARKET_STATE = {
 	},
 	error: null,
 	isFetching: false,
+	quantity: 1,
 };
 
 function marketReducer(state = INITIAL_MARKET_STATE, action) {

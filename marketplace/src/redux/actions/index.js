@@ -84,6 +84,13 @@ export function deleteProduct(id) {
 	};
 }
 
+export function increasesQuantityProducts(item) {
+	return {
+		type: BUY_PRODUCT,
+		item,
+	};
+}
+
 export function fetchProducts() {
 	return async (dispatch) => {
 		try {

@@ -5,9 +5,13 @@ import { Button, Card, ListGroup } from 'react-bootstrap';
 import Header from '../components/Header';
 
 import '../styles/ShoppingCart.css';
-import { deleteProduct } from '../redux/actions';
+import { deleteProduct, increasesQuantityProducts } from '../redux/actions';
 
-function ShoppingCart({ itemsInShoppingCart, removeProduct }) {
+function ShoppingCart({
+	itemsInShoppingCart,
+	removeProduct,
+	encreasesQuantity,
+}) {
 	function sumTotalValue() {
 		const totalValue = itemsInShoppingCart.reduce(
 			(acc, currentValue) => Number(acc) + Number(currentValue.price),
@@ -15,10 +19,6 @@ function ShoppingCart({ itemsInShoppingCart, removeProduct }) {
 		);
 
 		return Number(totalValue).toFixed(2);
-	}
-
-	function handleClick(index) {
-		removeProduct(index);
 	}
 
 	useEffect(() => {
@@ -36,37 +36,45 @@ function ShoppingCart({ itemsInShoppingCart, removeProduct }) {
 					<p className="card__total">Total: {sumTotalValue()}</p>
 				</Card.Header>
 				<ListGroup variant="flush">
-					{itemsInShoppingCart.map((item, index) => {
-						if(item.id === itemsInShoppingCart[index].id) {
-              console.log(itemsInShoppingCart.length)
-            }
-						return (
-							<ListGroup.Item key={item.id}>
-								<img
-									src={item.thumbnail}
-									alt={item.title}
-									width="70px"
-									height="70px"
-								/>
-								<p className="card__title">{item.title}</p>
-								<div className="card__buttons">
-									<p>Quantidade: 1</p>
-									<Button
-										type="button"
-										style={{ backgroundColor: 'transparent', border: 'none' }}
-										onClick={() => handleClick(index)}
-									>
-										<img
-											src="https://img.icons8.com/fluent/48/000000/delete-sign.png"
-											alt="trash"
-											width="25px"
-										/>
-									</Button>
-								</div>
-								<p className="card__price">R$ {item.price.toFixed(2)}</p>
-							</ListGroup.Item>
-						);
-					})}
+					{itemsInShoppingCart.map((item, index) => (
+						<ListGroup.Item key={item.id} className="item">
+							<img
+								src={item.thumbnail}
+								alt={item.title}
+								width="70px"
+								height="70px"
+							/>
+							<p className="card__title">{item.title}</p>
+							<div className="card__buttons">
+								<p>Quantidade: 1</p>
+
+								<Button
+									type="button"
+									style={{ backgroundColor: 'transparent', border: 'none' }}
+									onClick={() => encreasesQuantity(item)}
+								>
+									<img
+										src="https://img.icons8.com/color/48/000000/plus.png"
+										alt="trash"
+										width="25px"
+									/>
+								</Button>
+
+								<Button
+									type="button"
+									style={{ backgroundColor: 'transparent', border: 'none' }}
+									onClick={() => removeProduct(index)}
+								>
+									<img
+										src="https://img.icons8.com/fluent/48/000000/minus.png"
+										alt="trash"
+										width="25px"
+									/>
+								</Button>
+							</div>
+							<p className="card__price">R$ {item.price.toFixed(2)}</p>
+						</ListGroup.Item>
+					))}
 				</ListGroup>
 			</Card>
 		</section>
@@ -79,11 +87,13 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
 	removeProduct: (index) => dispatch(deleteProduct(index)),
+	encreasesQuantity: (item) => dispatch(increasesQuantityProducts(item)),
 });
 
 ShoppingCart.propTypes = {
 	itemsInShoppingCart: propTypes.arrayOf(propTypes.object),
 	removeProduct: propTypes.func.isRequired,
+	encreasesQuantity: propTypes.func.isRequired,
 };
 
 ShoppingCart.defaultProps = {
