@@ -1,0 +1,12 @@
+.toastbox {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.toastbox__toast {
+  position: absolute;
+  text-align: center;
+  top: 70%;
+  width: 100%;
+}
