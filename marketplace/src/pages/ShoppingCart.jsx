@@ -37,7 +37,9 @@ function ShoppingCart({ itemsInShoppingCart, removeProduct }) {
 				</Card.Header>
 				<ListGroup variant="flush">
 					{itemsInShoppingCart.map((item, index) => {
-						console.log('oi');
+						if(item.id === itemsInShoppingCart[index].id) {
+              console.log(itemsInShoppingCart.length)
+            }
 						return (
 							<ListGroup.Item key={item.id}>
 								<img
