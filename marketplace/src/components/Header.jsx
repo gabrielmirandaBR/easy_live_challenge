@@ -1,4 +1,4 @@
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Navbar, NavDropdown } from 'react-bootstrap';
 import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
@@ -15,11 +15,13 @@ function Header({ dropDownMenu }) {
 				<>
 					<Navbar.Toggle aria-controls="navbar-dark-example" />
 					<Navbar.Collapse id="navbar-dark-example">
-						<Nav>
+					
 							<NavDropdown.Divider />
-							<NavDropdown.Item href="/">Carrinho</NavDropdown.Item>
+								<Link to="/shopping_cart" className="header__link">
+									Carrinho
+								</Link>
 							<NavDropdown.Divider />
-						</Nav>
+						
 					</Navbar.Collapse>
 				</>
 			)}
