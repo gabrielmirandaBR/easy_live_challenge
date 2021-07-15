@@ -5,7 +5,7 @@ import { buyProduct } from '../redux/actions';
 import ToastBox from '../components/ToastBox';
 import Header from '../components/Header';
 import ItemDetails from '../components/ItemDetails';
-import AvaliationForm from '../components/AvaliationForm';
+import Avaliations from '../components/Avaliations';
 
 function ProductDetails({ itemDetails, setInShoppingCart }) {
 	const [show, setShow] = useState(false);
@@ -20,7 +20,7 @@ function ProductDetails({ itemDetails, setInShoppingCart }) {
 			<Header />
 			<ItemDetails itemDetails={itemDetails} handleClick={handleClick} />
 			<ToastBox show={show} setShow={setShow} />
-			<AvaliationForm />
+			<Avaliations />
 		</section>
 	);
 }
