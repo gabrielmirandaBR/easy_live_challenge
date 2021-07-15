@@ -1,0 +1,15 @@
+.top-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; 
+  width: 100%;
+  bottom: 40px;
+  height: 10px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#top-button__icon:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
