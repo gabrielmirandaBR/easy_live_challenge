@@ -72,7 +72,7 @@ function FormAvaliation({
 						/>
 					</Form.Group>
 
-					<Button variant="primary" type="submit">
+					<Button variant="primary" type="submit" id="avaliation__button">
 						Enviar
 					</Button>
 				</Form>
