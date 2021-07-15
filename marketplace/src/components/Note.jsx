@@ -40,7 +40,7 @@ Note.propTypes = {
 		note: propTypes.shape({
 			name: propTypes.string.isRequired,
 			email: propTypes.string.isRequired,
-			evaluation: propTypes.number,
+			evaluation: propTypes.string,
 			comment: propTypes.string,
 		}),
 	}).isRequired,

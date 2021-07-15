@@ -73,7 +73,7 @@ function FormAvaliation({
 					</Form.Group>
 
 					<Button variant="primary" type="submit">
-						Submit
+						Enviar
 					</Button>
 				</Form>
 			</Card.Body>
