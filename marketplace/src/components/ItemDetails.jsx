@@ -20,7 +20,7 @@ function ItemDetails({ itemDetails, handleClick }) {
 				/>
 				<Card.Body>
 					<Card.Title>{itemDetails.title}</Card.Title>
-					<Card.Title className="details__price">
+					<Card.Title id="details__price">
 						R$ {itemDetails.price}
 					</Card.Title>
 					<div className="details__seller">
@@ -91,21 +91,5 @@ ItemDetails.propTypes = {
 	}).isRequired,
 	handleClick: propTypes.func.isRequired,
 };
-
-/* ItemDetails.defaultProps = {
-	itemDetails: {
-		thumbnail: '',
-		title: '',
-		price: 0,
-		sold_quantity: 0,
-		address: {
-			city_name: '',
-			state_name: '',
-		},
-		seller: {
-			permalink: '',
-		},
-	},
-}; */
 
 export default ItemDetails;
