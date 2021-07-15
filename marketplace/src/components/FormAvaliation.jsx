@@ -89,7 +89,7 @@ FormAvaliation.propTypes = {
 	setEmail: propTypes.func.isRequired,
 	comment: propTypes.string.isRequired,
 	setComment: propTypes.func.isRequired,
-	evaluation: propTypes.string.isRequired,
+	evaluation: propTypes.number.isRequired,
 	setEvaluation: propTypes.func.isRequired,
 };
 
