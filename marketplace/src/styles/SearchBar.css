@@ -9,12 +9,12 @@
 #search__input {
   border-color: #f8f9fa;
   border-radius: 15px;
-  padding: 5px;
+  padding: 25px;
   text-align: center;
   width: 50vw;
 }
 
 .search__button img {
   background-color: transparent;
-  width: 30px;
+  width: 50px;
 }
