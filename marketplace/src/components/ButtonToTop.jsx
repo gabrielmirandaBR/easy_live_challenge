@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 
 import '../styles/ButtonToTop.css';
+
+// idéia retirada no site: https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/
 
 function ButtonToTop() {
 	const [visible, setVisible] = useState(false);
@@ -15,6 +17,14 @@ function ButtonToTop() {
 			setVisible(false);
 		}
 	}
+
+	useEffect(() => {
+		toggleVisible();
+
+		return () => {
+			setVisible(false);
+		};
+	}, []);
 
 	function handleClick() {
 		window.scrollTo({
