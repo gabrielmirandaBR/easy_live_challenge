@@ -1,0 +1,8 @@
+.avaliation__title {
+  text-align: center;
+}
+
+.avaliation__range {
+  display: flex;
+  justify-content:space-between
+}
