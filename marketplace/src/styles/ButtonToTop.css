@@ -1,0 +1,11 @@
+.top-button {
+  align-items: center;
+  bottom: 40px;
+  cursor: pointer;
+  display: flex;
+  height: 10px;
+  justify-content: center;
+  position: fixed; 
+  width: 100%;
+  z-index: 1;
+}

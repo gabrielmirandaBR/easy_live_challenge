@@ -1,6 +1,14 @@
 .categories {
   display: flex;
-  margin: 10px;
-  overflow-x: scroll;
+  overflow-x: auto;
   width: 100vw;
+}
+
+#categories__button {
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-right: 5px;
+  min-width: 75px;
+  padding: 5px;
 }

@@ -1,4 +1,4 @@
-import { Button } from 'react-bootstrap';
+import { Button, Navbar } from 'react-bootstrap';
 import propTypes from 'prop-types';
 
 import '../styles/ListCategories.css';
@@ -14,43 +14,29 @@ function ListCategories({ categories, fetchFilteredItems }) {
 
 	return (
 		<section className="categories">
-			<Button
-				onClick={({ target: { name } }) => handleClick(name)}
-				type="button"
-				variant="light"
-				style={{
-					backgroundColor: 'rgb(248, 249, 250)',
-					border: 'none',
-					marginRight: '5px',
-					borderRadius: '30px',
-					fontSize: '0.75rem',
-					minWidth: '75px',
-					padding: '5px',
-				}}
-			>
-				Computador
-			</Button>
-
-			{categories.slice(0, NUMBER_OF_CATEGORIES).map((category) => (
+			<Navbar bg="light">
 				<Button
-					key={category.id}
 					onClick={({ target: { name } }) => handleClick(name)}
-					name={category.name}
 					type="button"
 					variant="light"
-					style={{
-						backgroundColor: 'rgb(248, 249, 250)',
-						border: 'none',
-						marginRight: '5px',
-						borderRadius: '30px',
-						fontSize: '0.75rem',
-						minWidth: '75px',
-						padding: '5px',
-					}}
+					id="categories__button"
 				>
-					{category.name}
+					Computador
 				</Button>
-			))}
+
+				{categories.slice(0, NUMBER_OF_CATEGORIES).map((category) => (
+					<Button
+						key={category.id}
+						onClick={({ target: { name } }) => handleClick(name)}
+						name={category.name}
+						type="button"
+						variant="light"
+						id="categories__button"
+					>
+						{category.name}
+					</Button>
+				))}
+			</Navbar>
 		</section>
 	);
 }
