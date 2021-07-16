@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/easy_live_challenge/static/css/main.8dfa7909.chunk.css",
+    "main.js": "/easy_live_challenge/static/js/main.121fd99b.chunk.js",
+    "main.js.map": "/easy_live_challenge/static/js/main.121fd99b.chunk.js.map",
+    "runtime-main.js": "/easy_live_challenge/static/js/runtime-main.bc0f8295.js",
+    "runtime-main.js.map": "/easy_live_challenge/static/js/runtime-main.bc0f8295.js.map",
+    "static/css/2.150d169a.chunk.css": "/easy_live_challenge/static/css/2.150d169a.chunk.css",
+    "static/js/2.70dbbcdc.chunk.js": "/easy_live_challenge/static/js/2.70dbbcdc.chunk.js",
+    "static/js/2.70dbbcdc.chunk.js.map": "/easy_live_challenge/static/js/2.70dbbcdc.chunk.js.map",
+    "index.html": "/easy_live_challenge/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/easy_live_challenge/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.8dfa7909.chunk.css.map": "/easy_live_challenge/static/css/main.8dfa7909.chunk.css.map",
+    "static/js/2.70dbbcdc.chunk.js.LICENSE.txt": "/easy_live_challenge/static/js/2.70dbbcdc.chunk.js.LICENSE.txt",
+    "static/media/search.3bd4c619.svg": "/easy_live_challenge/static/media/search.3bd4c619.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bc0f8295.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.70dbbcdc.chunk.js",
+    "static/css/main.8dfa7909.chunk.css",
+    "static/js/main.121fd99b.chunk.js"
+  ]
+}
