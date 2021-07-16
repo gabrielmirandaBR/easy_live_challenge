@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import { Card, ListGroup } from 'react-bootstrap';
@@ -9,18 +9,18 @@ import ProductInShoppingCart from '../components/ProductInShoppingCart';
 import '../styles/ShoppingCart.css';
 
 function ShoppingCart({ itemsInShoppingCart }) {
-	function sumTotalValue() {
+	const sumTotalValue = useCallback(() => {
 		const totalValue = itemsInShoppingCart.reduce(
 			(acc, currentValue) => Number(acc) + Number(currentValue.price),
 			[0]
 		);
 
 		return Number(totalValue).toFixed(2);
-	}
+	}, [itemsInShoppingCart]);
 
 	useEffect(() => {
 		sumTotalValue();
-	}, [itemsInShoppingCart]);
+	}, [sumTotalValue, itemsInShoppingCart]);
 
 	return (
 		<section className="shopping">
