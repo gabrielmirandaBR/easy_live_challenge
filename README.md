@@ -32,6 +32,7 @@ Foi utilizada a metodologia <a href="https://rockcontent.com/br/blog/o-que-e-mvp
 Pontuando os seguintes tópicos a serem melhorados na próxima versão da aplicação:
 
 - Agrupar os item iguais no carrinho de compras;
+- Corrigir warning;
 - Melhorar o código CSS e a estilização da aplicação utilizando <a href=" https://sass-lang.com/" target="_blank">SASS</a>.
 
 ## Desenvolvimento
