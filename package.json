@@ -1,5 +1,6 @@
 {
   "name": "marketplace",
+  "homepage": "https://gabrielmirandaBR.github.io/easy_live_challenge",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
