@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Marketplace Blue Shopping :credit_card: :money_with_wings:
+#### Este projeto faz parte do desafio de Front-End da Easy Live.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introdução
+Esta aplicação é um e-commerce com produtos oriundos do Mercado Livre, pela <a href="https://developers.mercadolivre.com.br/pt_br/api-docs-pt-br" target="_blank">API Oficial</a>. A pessoa usuária tem as opções de:
+  - Procurar por produtos de acordo com as categorias;
+  - Procurar produtos pela barra de busca;
+  - Visualizar os detalhes do produto;
+  - Visualizar e adicionar comentários sobre o produto;
+  - Adicionar e remover itens do carrinho de compras.
 
-## Available Scripts
+## Habilidades
+Neste projeto foram utilizadas as seguintes habilidades:
+  - Desenvolvimento em <a href="https://blog.apiki.com/mobile-first-o-conceito-e-sua-aplicabilidade/" target="_blank">Mobile First</a>, ou seja, pensada e planejada, em um primeiro momento, para dispositivos móveis;
+  - Gerenciamento de estado global utilizando <a href="https://redux.js.org/" target="_blank">Redux</a>;
+  - Aplicação totalmente responsiva utilizando o framework <a href="https://react-bootstrap.github.io/" target="_blank">React Bootstrap</a>;
+  - Convenção de nomeclatura do CSS com <a href="https://desenvolvimentoparaweb.com/css/bem/" target="_blank">BEM</a>.
 
-In the project directory, you can run:
+## Futuras melhorias
+Foi utilizada a metodologia <a href="https://rockcontent.com/br/blog/o-que-e-mvp/" target="_blank">Mínimo Produto Viável (MVP)</a>, ou seja, uma versão de teste que apresenta todas as principais funcionalidades que a aplicação necessita de ter:
+  - Página com a lista de produtos;
+  - Página de detalhes do produto;
+  - Página de carrinho de compras.
 
-### `yarn start`
+Pontuando os seguintes tópicos a serem melhorados na próxima versão da aplicação:
+  - Agrupar os item iguais no carrinho de compras;
+  - Melhorar o código CSS e a estilização da aplicação utilizando <a href=" https://sass-lang.com/" target="_blank">SASS</a>.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Desenvolvimento
+Para iniciar o desenvolvimento, é necessário clonar o repositório do GitHub, acessar o diretório do projeto e instalar as dependências:
+```shell
+cd "diretorio de sua preferencia"
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+git clone git@github.com:gabrielmirandaBR/easy_live_challenge.git
 
-### `yarn test`
+cd easy_live_challenge
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm install
 
-### `yarn build`
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Demonstração da Aplicação
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Fluxograma da aplicação com as rotas, páginas e componentes utilizados
+![image](./images/diagram.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Página de Produtos (Home)
+![image](./images/Home.gif)
 
-### `yarn eject`
+### Página de Detalhes do Produto (ProductDetails)
+![image](./images/ItemsDetails.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Página de Carrinho de Compras (ShoppingCart)
+![image](./images/ShoppingCart.gif)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Aplicação totalmente responsiva
+![image](./images/responsive.gif)
