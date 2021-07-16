@@ -13,7 +13,7 @@ function Home({ fetchItems, fetchcategories, categories }) {
 	useEffect(() => {
 		fetchItems();
 		fetchcategories();
-	}, [fetchItems, fetchcategories]);
+	}, [fetchItems, fetchcategories ]);
 
 	return (
 		<>
