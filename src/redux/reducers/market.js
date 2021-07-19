@@ -17,7 +17,7 @@ const INITIAL_MARKET_STATE = {
 		filteredProducts: [],
 		productDetails: {},
 		productsInShoppingCart: [],
-		quantity:1,
+		quantity: 1,
 	},
 	error: null,
 	isFetching: false,
@@ -91,9 +91,11 @@ function marketReducer(state = INITIAL_MARKET_STATE, action) {
 			};
 
 		case BUY_PRODUCT:
-			const item = state.payload.productsInShoppingCart.find((product) => product.id === action.item.id);
-			
-			if(item) {
+			const item = state.payload.productsInShoppingCart.find(
+				(product) => product.id === action.item.id
+			);
+
+			if (item) {
 				return {
 					...state,
 					payload: {

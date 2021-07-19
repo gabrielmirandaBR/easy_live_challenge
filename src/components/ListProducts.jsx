@@ -16,13 +16,13 @@ function ListProducts({ items, itemsFiltered, isFetching }) {
 			</section>
 			<ButtonToTop />
 		</section>
-	)
-	:
-	<Spinner 
-		animation="border" 
-		variant="primary"
-		style={{display: 'flex', margin:'auto'}} 
-	/>
+	) : (
+		<Spinner
+			animation="border"
+			variant="primary"
+			style={{ display: 'flex', margin: 'auto' }}
+		/>
+	);
 }
 
 const mapStateToProps = (state) => ({
