@@ -19,6 +19,7 @@ Neste projeto foram utilizadas as seguintes habilidades:
 - Desenvolvimento em <a href="https://blog.apiki.com/mobile-first-o-conceito-e-sua-aplicabilidade/" target="_blank">Mobile First</a>, ou seja, pensada e planejada, em um primeiro momento, para dispositivos móveis;
 - Gerenciamento de estado global utilizando <a href="https://redux.js.org/" target="_blank">Redux</a>;
 - Aplicação totalmente responsiva utilizando o framework <a href="https://react-bootstrap.github.io/" target="_blank">React Bootstrap</a>;
+- Padronização do código com <a href="https://eslint.org/" target="_blanck">ESlint</a> e <a href="https://prettier.io/" target="_blanck">Prettier</a>;
 - Convenção de nomeclatura do CSS com <a href="https://desenvolvimentoparaweb.com/css/bem/" target="_blank">BEM</a>.
 
 ## Futuras melhorias
