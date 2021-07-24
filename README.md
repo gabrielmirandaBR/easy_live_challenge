@@ -44,7 +44,7 @@ cd "diretorio de sua preferencia"
 
 git clone git@github.com:gabrielmirandaBR/easy_live_challenge.git
 
-cd easy_live_challenge
+cd e-commerce-CRUD
 
 npm install
 
