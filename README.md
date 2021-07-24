@@ -1,7 +1,5 @@
 # Marketplace Blue Shopping :credit_card: :money_with_wings:
 
-#### Este projeto faz parte do desafio de Front-End da Easy Live.
-
 ## Introdução
 
 Esta aplicação é um e-commerce com produtos oriundos do Mercado Livre, pela <a href="https://developers.mercadolivre.com.br/pt_br/api-docs-pt-br" target="_blank">API Oficial</a>. A pessoa usuária tem as opções de:
