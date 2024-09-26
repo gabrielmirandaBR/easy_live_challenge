@@ -1,5 +1,3 @@
-/* eslint-disable no-return-assign */
-/* eslint-disable no-param-reassign */
 import {
 	REQUEST_PRODUCTS,
 	REQUEST_PRODUCTS_ERROR,
@@ -19,10 +17,10 @@ const INITIAL_MARKET_STATE = {
 		filteredProducts: [],
 		productDetails: {},
 		productsInShoppingCart: [],
+		quantity: 1,
 	},
 	error: null,
 	isFetching: false,
-	quantity: 1,
 };
 
 function marketReducer(state = INITIAL_MARKET_STATE, action) {
@@ -93,6 +91,23 @@ function marketReducer(state = INITIAL_MARKET_STATE, action) {
 			};
 
 		case BUY_PRODUCT:
+			const item = state.payload.productsInShoppingCart.find(
+				(product) => product.id === action.item.id
+			);
+
+			if (item) {
+				return {
+					...state,
+					payload: {
+						...state.payload,
+						productsInShoppingCart: [
+							...state.payload.productsInShoppingCart,
+							action.item,
+						],
+					},
+				};
+			}
+
 			return {
 				...state,
 				payload: {
